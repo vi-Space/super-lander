@@ -1,0 +1,21 @@
+{
+  "unique.example": {
+    "en_US": "Example",
+    "de_DE": "Beispiel",
+    "pl_PL": "Przykład"
+  },
+  "contact.method": {
+    "en_US": "Choose contact method",
+    "de_DE": "Wählen Sie die Kontaktmethode"
+  },
+  "language.changed": {
+    "en_US": "Language changed",
+    "de_DE": "Sprache geändert"
+  },
+  "global.slogan": {
+    "en_US": "Do it better",
+    "de_DE": "Mach es besser"
+  }
+}
+
+  
