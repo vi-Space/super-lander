@@ -23,7 +23,7 @@ import classNames from "classnames";
 import Drawer from "./drawer";
 import Contact from "./contact";
 
-import {setLanguage, translate} from '../../utils/language';
+import {setLanguage, translate, getLanguage} from '../../utils/language';
 
 const styles = {
   root: {
@@ -163,8 +163,8 @@ class Header extends Component {
                 anchorEl={this.state.language}
                 open={Boolean(this.state.language)}
                 onClose={() => this.hideLanguageMenu()}>
-                <MenuItem onClick={() => {this.hideLanguageMenu(); this.setLanguage("en_US"); }}>English</MenuItem>
-                <MenuItem onClick={() => {this.hideLanguageMenu(); this.setLanguage("de_DE"); }}>German</MenuItem>
+                <MenuItem selected={getLanguage() === "en_US"} onClick={() => {this.hideLanguageMenu(); this.setLanguage("en_US"); }}>English</MenuItem>
+                <MenuItem selected={getLanguage() === "de_DE"} onClick={() => {this.hideLanguageMenu(); this.setLanguage("de_DE"); }}>German</MenuItem>
               </Menu>
             </div>
           </Toolbar>

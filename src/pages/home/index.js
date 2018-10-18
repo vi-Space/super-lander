@@ -5,7 +5,7 @@ import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
 
 import {Head} from './sections/';
-import {About, Contact} from '../../components/'
+import {About, Contact, Services} from '../../components/'
 import { Grid } from '@material-ui/core';
 
 const styles = theme => ({
@@ -28,10 +28,8 @@ class Home extends Component {
 
         return <div className="home">
             <Head />
-            <Paper className={classes.root} elevation={1}>
-                <About />
-            </Paper>
-            <br/>
+            <About />
+            <Services/>
             <Contact />
         </div>;
     }

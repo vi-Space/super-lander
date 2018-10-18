@@ -1,6 +1,6 @@
 import Langlate from 'react-langlate';
 
-let language = "en_US";
+let language = "de_DE";
 const translations = window.translations;
 
 function setLanguage(newLanguage="en_US") {
