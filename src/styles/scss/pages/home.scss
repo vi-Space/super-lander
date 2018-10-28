@@ -8,29 +8,27 @@
         height: 60vh;
         max-width: 100%;
         width: 100vw;
-        background-color: #212121;
+        background-color: #1d1d1d;
 
         & p {
-            line-height: 60vh;
             text-align: center;
             color: #fff;
+            position: absolute;
+            top: 25vh;
+            left: 50%;
+            transform: translateX(-50%);
         }
 
         position: relative;
 
-        &::after {
-            content: "";
-            background-image: url(https://source.unsplash.com/tg1Z_ljKwKk/1600x900);
+        & .background {
+            background-image: url(https://source.unsplash.com/klWUhr-wPJ8/1600x900);
             background-repeat: no-repeat;
-            background-attachment: fixed;
-            background-position: center; 
-            background-size: auto 100vw;
-            opacity: 0.4;
-            top: 0;
-            left: 0;
-            bottom: 0;
-            right: 0;
-            position: absolute;
+            background-size: cover;
+            background-position: center;
+            opacity: 0.45;
+            height: 100%;
+            width: 100%;
         }
     }
 }

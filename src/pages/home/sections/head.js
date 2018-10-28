@@ -18,6 +18,9 @@ class Head extends Component {
         opacity: 1.0,
         transition: "all .255s ease",
       },
+      background: {
+        filter: "blur(2px)"
+      }
     };
   }
 
@@ -47,6 +50,9 @@ class Head extends Component {
         opacity: fade,
         transform: "translateY(" + -window.pageYOffset / 2 + "px)",
       },
+      background: {
+        filter: `blur(${fade * 2}px)`
+      }
     });
   };
 
@@ -54,13 +60,13 @@ class Head extends Component {
     const { classes } = this.props;
 
     return (
-      <React.Fragment>
         <div className="head">
+          <div className="background" style={this.state.background}></div>
           <Typography className={classes.typography}>
-            <div style={this.state.slogan}>{translate("global.slogan")}</div>
+            <div style={this.state.slogan}>Gob<span style={{fontWeight: "bold"}}>D</span> <span style={{fontWeight: "300"}}>Consulting</span>
+</div>
           </Typography>
         </div>
-      </React.Fragment>
     );
   }
 }

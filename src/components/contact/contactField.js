@@ -7,7 +7,23 @@ import {
   Button,
   TextField,
   withStyles,
+  Card,
+  CardHeader,
+  CardMedia,
+  CardContent,
+  Avatar,
+  IconButton,
+  CardActions,
+  Collapse,
+  List,
+  ListItem,
+  ListItemText,
+  ListItemAvatar,
 } from "@material-ui/core";
+
+import PhoneIcon from '@material-ui/icons/PhoneOutlined';
+import MailIcon from '@material-ui/icons/MailOutlined';
+
 
 const style = theme => ({
   textField: {
@@ -24,89 +40,51 @@ const style = theme => ({
   },
 });
 
+const contacts = [
+  { icon: PhoneIcon, value: "+48 450010420", link: "tel:+48450010420" },
+  {
+    icon: MailIcon,
+    value: "example@vispace.online",
+    link: "mailto:example@vispace.online",
+  },
+];
+
 class ContactField extends Component {
+
   render() {
     const { classes } = this.props;
 
     return (
-      <Grid container spacing={6}>
-        <Grid item xs={12} md={6}>
+      <Grid container>
+        <Grid item xs={6}>
           <Paper className={classes.paper}>
             <Typography variant="title">Contact</Typography>
             <br />
-            <Grid container spacing={6}>
-              <Grid item xs={12} md={6}>
-                <TextField
-                  required
-                  id="outlined-uncontrolled"
-                  label="Name"
-                  className={classes.textField}
-                  margin="normal"
-                  variant="outlined"
+            <List>
+            {contacts.map(contact => (
+              <ListItem
+                button
+                key={contact.value}>
+                <ListItemAvatar>
+                  <Avatar>
+                    <contact.icon />
+                  </Avatar>
+                </ListItemAvatar>
+                <ListItemText
+                  primary={
+                    <a
+                      target="_blank"
+                      href={contact.link}
+                      style={{ textDecoration: "none", color: "#000" }}>
+                      {contact.value}
+                    </a>
+                  }
                 />
-              </Grid>
-              <Grid item xs={12} md={6}>
-                <TextField
-                  id="outlined-uncontrolled"
-                  label="Company"
-                  className={classes.textField}
-                  margin="normal"
-                  variant="outlined"
-                />
-              </Grid>
-              <br />
-              <Grid item xs={12} md={6}>
-                <TextField
-                  required
-                  id="outlined-uncontrolled"
-                  label="Phone"
-                  className={classes.textField}
-                  margin="normal"
-                  variant="outlined"
-                />
-              </Grid>
-              <Grid item xs={12} md={6}>
-                <TextField
-                  required
-                  id="outlined-email-input"
-                  label="Email"
-                  className={classes.textField}
-                  type="email"
-                  name="email"
-                  autoComplete="email"
-                  margin="normal"
-                  variant="outlined"
-                />
-              </Grid>
-              <br />
-              <Grid item xs={10}>
-                <TextField
-                  multiline
-                  required
-                  id="outlined-multiline-flexible"
-                  label="Message"
-                  className={classes.textField}
-                  type="Message"
-                  name="Message"
-                  fullWidth
-                  autoComplete="Message"
-                  margin="normal"
-                  variant="outlined"
-                />
-              </Grid>
-
-              <Grid item xs={12}>
-                <Button
-                  variant="contained"
-                  color="primary"
-                  className={classes.button}>
-                  SEND
-                </Button>
-              </Grid>
-            </Grid>
+              </ListItem>
+            ))}
+          </List>
           </Paper>
         </Grid>
-        <Grid item xs={12} md={6} />
       </Grid>
     );
   }

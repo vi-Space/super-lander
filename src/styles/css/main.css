@@ -1,14 +1,10 @@
 html, body {
   margin: 0;
   padding: 0;
-  font-family: product_sans;
+  font-family: "Product Sans", serif;
   background: #f3f3f3;
 }
 
-@font-face {
-  font-family: product_sans;
-  src: url("../../utils/fonts/Product Sans Regular.ttf");
-}
 .z-depth-0 {
   box-shadow: initial !important;
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
@@ -49,27 +45,25 @@ html, body {
   height: 60vh;
   max-width: 100%;
   width: 100vw;
-  background-color: #212121;
+  background-color: #1d1d1d;
   position: relative;
 }
 .home .head p {
-  line-height: 60vh;
   text-align: center;
   color: #fff;
-}
-.home .head::after {
-  content: "";
-  background-image: url(https://source.unsplash.com/tg1Z_ljKwKk/1600x900);
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: center;
-  background-size: auto 100vw;
-  opacity: 0.4;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
   position: absolute;
+  top: 25vh;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.home .head .background {
+  background-image: url(https://source.unsplash.com/klWUhr-wPJ8/1600x900);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.45;
+  height: 100%;
+  width: 100%;
 }
 
 /*# sourceMappingURL=main.css.map */

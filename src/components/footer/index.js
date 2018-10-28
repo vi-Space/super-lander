@@ -5,13 +5,11 @@ import { Typography, Grid } from "@material-ui/core";
 
 const styles = {
   root: {
-    height: "128px",
-    maxHeight: "128px",
+    minHeight: "128px",
     position: "relative",
     background: "#212121",
     width: "100vw",
-    maxWidth: "100%",
-    marginTop: "3%",
+    maxWidth: "100%"
   },
   container: {
     paddingLeft: "10vw",
@@ -21,13 +19,14 @@ const styles = {
     lineHeight: "128px",
     color: "#FFFFFF",
   },
-  linksTypo: {
-    textAlign: "center",
-    color: "#FFFFFF"
-  },
   linksUrl: {
     textAlign: "center",
-    color: "#FFFFFF"
+    color: "#FFFFFF",
+    textDecoration: "none",
+    transition: "all .255s ease",
+    "&:hover": {
+      opacity: '.9',
+    }
   }
 };
 
@@ -53,27 +52,23 @@ class Footer extends Component {
       <div className={classes.root}>
         <div className={classes.container}>
           <Grid container>
-            <Grid item xs={6}>
+            <Grid item md={6} xs={12}>
               <Typography variant="subheading" className={classes.typography}>
                 Copyright (c) viSpace 2018
               </Typography>
             </Grid>
-            <Grid item xs={3}>
-              <div className={classes.typography}>
-                <Grid container>
+            <Grid item md={3} xs={12}>
+                <Grid container style={{height: "100%"}}>
                   {this.socialMedia.map(media => {
                     return (
-                      <Grid item xs={4}>
-                        <Typography classNames={classes.linksTypo} variant="subheading">
-                          <Link classNames={classes.linksUrl} to={media.href}>
-                            {media.title}
-                          </Link>
+                      <Grid item md={4} xs={3}>
+                        <Typography classNames={classes.typography} style={{textAlign: "right", lineHeight: "128px"}} variant="subheading">
+                          <a href={media.href} className={classes.linksUrl}>{media.title}</a>
                         </Typography>
                       </Grid>
                     );
                   })}
                 </Grid>
-              </div>
             </Grid>
           </Grid>
         </div>

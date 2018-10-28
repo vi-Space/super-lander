@@ -8,10 +8,10 @@ import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
 import Divider from "@material-ui/core/Divider";
-import InboxIcon from "@material-ui/icons/Inbox";
-import DraftsIcon from "@material-ui/icons/Drafts";
+import InboxIcon from "@material-ui/icons/InboxOutlined";
+import DraftsIcon from "@material-ui/icons/DraftsOutlined";
 
-import CakeIcon from "@material-ui/icons/Cake";
+import CakeIcon from "@material-ui/icons/CakeOutlined";
 import { Typography } from "@material-ui/core";
 
 const styles = {

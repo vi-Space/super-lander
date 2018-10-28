@@ -6,9 +6,9 @@ import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import IconButton from "@material-ui/core/IconButton";
-import MenuIcon from "@material-ui/icons/Menu";
-import PhoneIcon from "@material-ui/icons/Phone";
-import LanguageIcon from "@material-ui/icons/Language";
+import MenuIcon from "@material-ui/icons/MenuOutlined";
+import PhoneIcon from "@material-ui/icons/PhoneOutlined";
+import LanguageIcon from "@material-ui/icons/LanguageOutlined";
 import Switch from "@material-ui/core/Switch";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import FormGroup from "@material-ui/core/FormGroup";
@@ -16,12 +16,14 @@ import MenuItem from "@material-ui/core/MenuItem";
 import Menu from "@material-ui/core/Menu";
 import Langlate from 'react-langlate';
 import Snackbar from '@material-ui/core/Snackbar';
-import CloseIcon from '@material-ui/icons/Close';
+import CloseIcon from '@material-ui/icons/CloseOutlined';
 
 import classNames from "classnames";
 
 import Drawer from "./drawer";
 import Contact from "./contact";
+
+import HomeIcon from '@material-ui/icons/HomeOutlined';
 
 import {setLanguage, translate, getLanguage} from '../../utils/language';
 
@@ -33,12 +35,13 @@ const styles = {
     maxWidth: "80%",
     position: "fixed",
     marginLeft: "10%",
-    borderRadius: "10px",
+    borderRadius: "600px",
     transition: "all .255s ease",
   },
   grow: {
     flexGrow: 1,
     textAlign: "center",
+    transition: "opacity, .255s ease"
   },
   menuButton: {
     marginLeft: -12,
@@ -64,6 +67,9 @@ class Header extends Component {
         background: "rgba(255, 255, 255, 0.15)",
         color: "#fff",
         marginTop: "3.75vh",
+      },
+      title: {
+        opacity: 0
       },
       language: false,
       snackbar: null
@@ -92,6 +98,7 @@ class Header extends Component {
     if (window.pageYOffset > 374) {
       this.setState({
         appBar: { background: "#fff", color: "#000", marginTop: "1.75vh" },
+        title: {opacity: 1}
       });
     } else {
       this.setState({
@@ -100,6 +107,7 @@ class Header extends Component {
           color: "#fff",
           marginTop: "3.75vh",
         },
+        title: {opacity: 0}
       });
     }
   };
@@ -131,41 +139,44 @@ class Header extends Component {
           className={classes.appBar}
           style={this.state.appBar}>
           <Toolbar>
-            <IconButton
+{/*             <IconButton
               className={classes.menuButton}
               onClick={() => this.toggleDrawer(true)}
               color="inherit"
               aria-label="Menu">
               <MenuIcon />
+            </IconButton> */}
+            <IconButton color="inherit" href="/" className={classes.menuButton}>
+              <HomeIcon />
             </IconButton>
             <Typography
               variant="title"
               color="inherit"
-              className={classes.grow}>
-              super-lander
+              className={classes.grow} style={this.state.title}>
+              Gob<span style={{fontWeight: "bold"}}>D</span> <span style={{fontWeight: "300"}}>Consulting</span>
             </Typography>
             <div>
               <IconButton color="inherit">
                 <PhoneIcon onClick={() => this.toggleContact(true)} />
               </IconButton>
-              <IconButton
+{/*               <IconButton
                 color="inherit"
                 aria-owns={this.state.language ? "contact-menu" : null}
                 aria-haspopup="true"
                 onClick={this.showLanguageMenu}
                 className={classes.languageMenuButton}>
-                <LanguageIcon
+                 <LanguageIcon
                   onClick={() => localStorage.setItem("language", "de_DE")}
-                />
-              </IconButton>
-              <Menu
+                /> 
+              </IconButton> 
+               <Menu
                 id="contact-menu"
                 anchorEl={this.state.language}
                 open={Boolean(this.state.language)}
                 onClose={() => this.hideLanguageMenu()}>
                 <MenuItem selected={getLanguage() === "en_US"} onClick={() => {this.hideLanguageMenu(); this.setLanguage("en_US"); }}>English</MenuItem>
                 <MenuItem selected={getLanguage() === "de_DE"} onClick={() => {this.hideLanguageMenu(); this.setLanguage("de_DE"); }}>German</MenuItem>
-              </Menu>
+              </Menu> */}
             </div>
           </Toolbar>
         </AppBar>

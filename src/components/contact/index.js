@@ -12,20 +12,19 @@ const style = theme => ({
   },
   background: {
     position: "relative",
-    height: "30vw",
     width: "100vw",
     maxWidth: "100%",
     backgroundPosition: "center",
     backgroundRepeat: "no-repeat",
     backgroundSize: "cover",
+    paddingTop: "5%",
+    paddingBottom: "5%",
     background:
-      "linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(https://images.unsplash.com/photo-1524661135-423995f22d0b?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=83b70261d97d9ea9c649c1414c89a834&auto=format&fit=crop&w=1353&q=80)",
+      "linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.8) ), url(https://source.unsplash.com/cU7wLFRyWWw/1600x900)",
   },
   content: {
-    position: "absolute",
-    top: "50%",
-    left: "50%",
-    transform: "translate(-50%, -50%)",
+    marginLeft: "50%",
+    transform: "translateX(-50%)"
   },
   
 });
